@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
-console.log("Here 0");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
@@ -122,7 +121,7 @@ function buildAndShowHomeHTML (categories) {
       console.log("Here before html modification");
       homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlToInsertIntoMainPage,
                                                    "randomCategoryShortName", 
-                                                   chosenCategoryShortName);
+                                                   "'" + chosenCategoryShortName + "'");
       console.log("Here after html modification");
       console.log(homeHtmlToInsertIntoMainPage);
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
